@@ -1,51 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfdrb8fujwrg0"]
+[gd_scene load_steps=6 format=3 uid="uid://bfdrb8fujwrg0"]
 
 [ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://breadknight proto1.png" id="1_o71oi"]
+[ext_resource type="Script" path="res://character_test.gd" id="1_x063q"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="2_lh6nl"]
 
-[sub_resource type="GDScript" id="GDScript_yjkee"]
-script/source = "extends CharacterBody2D
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kevo"]
+size = Vector2(1705, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wuhl"]
+size = Vector2(13.7674, 10.6047)
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -200.0
+[node name="main" type="Node2D"]
+script = ExtResource("1_x063q")
 
+[node name="Breadknight" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 143.0
+offset_bottom = 94.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 14
+text = "This is Mr Bread"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+[node name="Area2D" type="Area2D" parent="."]
 
-	# Handle jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-"
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5lua"]
-radius = 38.0198
-height = 111.525
-
-[node name="Node2D" type="Node2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(767.5, 283)
+shape = SubResource("RectangleShape2D_8kevo")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = SubResource("GDScript_yjkee")
+script = ExtResource("2_lh6nl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(49, 45)
-rotation = 1.5708
-scale = Vector2(0.789062, 0.789062)
-shape = SubResource("CapsuleShape2D_k5lua")
+position = Vector2(231, 91)
+scale = Vector2(5.375, 5.375)
+shape = SubResource("RectangleShape2D_5wuhl")
 
-[node name="BreadknightProto1" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(50, 46)
-scale = Vector2(5.70703, 5.70703)
+[node name="BreadknightProto1" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+position = Vector2(-0.186047, 0.930233)
 texture = ExtResource("1_o71oi")
