@@ -1,19 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfdrb8fujwrg0"]
+[gd_scene load_steps=3 format=3 uid="uid://bfdrb8fujwrg0"]
 
-[ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://breadknight proto1.png" id="1_o71oi"]
 [ext_resource type="Script" path="res://character_test.gd" id="1_x063q"]
-[ext_resource type="Script" path="res://character_body_2d.gd" id="2_lh6nl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kevo"]
-size = Vector2(1705, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wuhl"]
-size = Vector2(13.7674, 10.6047)
+[ext_resource type="PackedScene" uid="uid://b7eeapa4n1cqp" path="res://breadknight.tscn" id="2_t2qy7"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_x063q")
 
 [node name="Breadknight" type="Label" parent="."]
+texture_filter = 1
 offset_left = 16.0
 offset_top = 32.0
 offset_right = 143.0
@@ -24,20 +18,5 @@ text = "This is Mr Bread"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(767.5, 283)
-shape = SubResource("RectangleShape2D_8kevo")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("2_lh6nl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(231, 91)
-scale = Vector2(5.375, 5.375)
-shape = SubResource("RectangleShape2D_5wuhl")
-
-[node name="BreadknightProto1" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
-position = Vector2(-0.186047, 0.930233)
-texture = ExtResource("1_o71oi")
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_t2qy7")]
+position = Vector2(293, 160)

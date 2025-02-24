@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var score = 0
 @export var health: int = 12
 var attack_power: int = 3
 var damage: int = 2
@@ -13,6 +14,18 @@ func _ready():
 	result = add(result,-5)
 	print(result)
 	
+func _process(float):
+	if Input.is_action_pressed("Up"):
+		position.y -= 5
+	if Input.is_action_pressed("Down"):
+		position.y += 5
+	if Input.is_action_pressed("Left"):
+		position.x -= 5
+	if Input.is_action_pressed("Right"):
+		position.x += 5
+		
+	move_and_slide()
+	
 func _input(event):
 	if event.is_action_pressed("Jump"):
 		health -= 2 
@@ -25,12 +38,12 @@ func _input(event):
 			print("You are inju red")
 		else:
 			print("You are fine")
-	if roll <= 0.8:
-		print("New Skill Acquired")
-	else:
-		print("Change form")
-	
 			
+		if roll <= 0.8:
+			print("New Skill Acquired")
+		else:
+			print("Change form")
+		
 func respawn():
 	pass
 	

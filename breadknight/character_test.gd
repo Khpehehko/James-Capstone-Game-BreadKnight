@@ -9,4 +9,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	Input.is_action_pressed("Up")
+	position.x -= 5
+	Input.is_action_pressed("Down")
+	position.x += 5
+	Input.is_action_pressed("Left")
+	position.y += 5
+	Input.is_action_pressed("Right")
+	position.y -= 5
