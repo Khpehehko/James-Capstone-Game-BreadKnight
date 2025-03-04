@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var bullet = get_tree().get_root().get_node("bullet")
+@onready var main = get_tree().get_root().get_node("main")
 @onready var projectile = load("res://bullet.tscn")
 
 var score = 0
@@ -23,12 +23,13 @@ func _process(float):
 	move_and_slide()
 	
 	if Input.is_action_pressed("Shoot"):
-		shoot()
+		_shoot()
 	
 func _shoot():
 	var instance = projectile.instantiate()
 	instance.direction = rotation
-	instance.spawnPos = global_position
-	instance.spawnRot = global_rotation
-	bullet.add_child.call_deferred(instance)
-	 
+	instance.spawnPosition = global_position
+	instance.spawnRotation = rotation
+	main.add_child.call_deferred(instance)
+	
+# give velocity to bullet, don't collide bullet with character body, reslove sliding issue

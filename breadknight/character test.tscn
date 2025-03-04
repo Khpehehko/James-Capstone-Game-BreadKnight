@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfdrb8fujwrg0"]
+[gd_scene load_steps=6 format=3 uid="uid://bfdrb8fujwrg0"]
 
 [ext_resource type="Script" path="res://character_test.gd" id="1_x063q"]
 [ext_resource type="PackedScene" uid="uid://b7eeapa4n1cqp" path="res://breadknight.tscn" id="2_t2qy7"]
 [ext_resource type="PackedScene" uid="uid://crux21ivvwpmb" path="res://borodinsky.tscn" id="3_fncis"]
+[ext_resource type="PackedScene" uid="uid://bvhud7bs4cvc5" path="res://Baugette.tscn" id="4_86bjl"]
+[ext_resource type="PackedScene" uid="uid://byj3v1xra57kw" path="res://bullet.tscn" id="5_uips3"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_x063q")
@@ -19,9 +21,15 @@ text = "This is Mr Bread"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Bullet" parent="." instance=ExtResource("5_uips3")]
+position = Vector2(232, 180)
+
 [node name="Breadknight" parent="." instance=ExtResource("2_t2qy7")]
 position = Vector2(293, 160)
 
 [node name="Borodinsky" parent="." instance=ExtResource("3_fncis")]
 position = Vector2(720, 238)
 health = 36
+
+[node name="Baugette" parent="." instance=ExtResource("4_86bjl")]
+position = Vector2(1264, 147)
