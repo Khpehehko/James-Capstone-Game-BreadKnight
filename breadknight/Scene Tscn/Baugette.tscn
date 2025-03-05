@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvhud7bs4cvc5"]
+
+[ext_resource type="Script" path="res://Baugette.gd" id="1_nnrq1"]
+[ext_resource type="Texture2D" uid="uid://dnjvui4gnryil" path="res://Character Assets/Baugette.png" id="2_dayi1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6osy"]
+radius = 9.3986
+height = 42.7413
+
+[node name="Baugette" type="CharacterBody2D"]
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("1_nnrq1")
+
+[node name="Baugette" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-12, -1)
+scale = Vector2(14.1875, 14.1875)
+texture = ExtResource("2_dayi1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 8)
+rotation = 1.5708
+scale = Vector2(8.9375, 8.9375)
+shape = SubResource("CapsuleShape2D_k6osy")
+
+[node name="Bulletcooldown" type="Timer" parent="."]
+process_callback = 0
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="Bulletcooldown" to="." method="_on_bulletcooldown_timeout"]

@@ -1,0 +1,45 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1741127584
+README.md::TextFile::-1::1739227282::0::1::::<><>::
+::res://Assets/::1740360275
+::res://Assets/Concept art/::1741120832
+::res://Assets/Concept art/characters/::1741118978
+Baugette.png::CompressedTexture2D::5290037619740296149::1741117776::1741127584::1::::<><>::
+Borodinsky.png::CompressedTexture2D::7353008315008701243::1740436211::1741127584::1::::<><>::
+breadknight.png::CompressedTexture2D::7642126706116010279::1740343749::1741127584::1::::<><>::
+Bullet standard.png::CompressedTexture2D::683484593969601584::1741118943::1741127584::1::::<><>::
+::res://Assets/Concept art/Enemies/::1741117398
+::res://Assets/Concept art/Objects/::1741120835
+Bullet standard.png::CompressedTexture2D::8450668702571930948::1741120816::1741127584::1::::<><>::
+::res://Assets/Concept art/PNG/::1740343776
+::res://Assets/Concept art/PNG/Breadknight/::1741118964
+breadknight proto1.png::CompressedTexture2D::5266608842339992376::1740343749::1741127584::1::::<><>::
+breadknight proto2.png::CompressedTexture2D::6220517591318880384::1740343749::1741127584::1::::<><>::
+breadknight proto3.png::CompressedTexture2D::5362828644961321281::1740343749::1741127584::1::::<><>::
+breadknight proto4.png::CompressedTexture2D::2769242667774746954::1740343749::1741127584::1::::<><>::
+breadknight proto5.png::CompressedTexture2D::2452089003238378721::1740343749::1741127584::1::::<><>::
+breadknight proto6.png::CompressedTexture2D::332897679074314581::1740343749::1741127584::1::::<><>::
+breadknight proto7.png::CompressedTexture2D::6917840119810201255::1740343749::1741127584::1::::<><>::
+breadknight proto8.png::CompressedTexture2D::7817236538673046515::1740343749::1741127584::1::::<><>::
+breadknight proto9.png::CompressedTexture2D::6370053950828681438::1740343749::1741127584::1::::<><>::
+breadknight proto10.png::CompressedTexture2D::5326970037345636138::1740343749::1741127584::1::::<><>::
+breadknight proto11.png::CompressedTexture2D::6197241799438607922::1740343749::1741127584::1::::<><>::
+breadknight proto12.png::CompressedTexture2D::7393601127545755844::1740343749::1741127584::1::::<><>::
+::res://breadknight/::1741127578
+Baugette.gd::GDScript::-1::1741118379::0::1::::<>CharacterBody2D<>::
+Baugette.png::CompressedTexture2D::8091607656163266131::1741117781::1741127584::1::::<><>::
+Baugette.tscn::PackedScene::3876058424755946902::1741120332::0::1::::<><>::res://Baugette.gd<>uid://dnjvui4gnryil::::res://Baugette.png
+borodinsky.gd::GDScript::-1::1741118447::0::1::::<>CharacterBody2D<>::
+Borodinsky.png::CompressedTexture2D::4079110210478972472::1740436299::1741127584::1::::<><>::
+borodinsky.tscn::PackedScene::6008785350531637493::1741119216::0::1::::<><>::uid://byd7l4xabliou::::res://Borodinsky.png<>res://borodinsky.gd
+breadknight proto1.png::CompressedTexture2D::3487589875456728339::1740365575::1741127584::1::::<><>::
+Breadknight.gd::GDScript::-1::1741127264::0::1::::<>CharacterBody2D<>::
+breadknight.tscn::PackedScene::4640964848283718903::1741127166::0::1::::<><>::res://Breadknight.gd<>uid://bpxodivuyvs0r::::res://breadknight proto1.png
+Bullet standard.png::CompressedTexture2D::5722269380774180372::1741120839::1741127584::1::::<><>::
+bullet.gd::GDScript::-1::1741126539::0::1::::<>CharacterBody2D<>::
+bullet.tscn::PackedScene::4091271310173104058::1741127166::0::1::::<><>::res://bullet.gd<>uid://cnr568n8vbkjc::::res://Bullet standard.png
+character test.tscn::PackedScene::2744593751732573993::1741127264::0::1::::<><>::res://character_test.gd<>uid://b7eeapa4n1cqp::::res://breadknight.tscn<>uid://crux21ivvwpmb::::res://borodinsky.tscn<>uid://bvhud7bs4cvc5::::res://Baugette.tscn<>uid://byj3v1xra57kw::::res://bullet.tscn
+character_body_2d.gd::GDScript::-1::1741125285::0::1::::<>CharacterBody2D<>::
+character_test.gd::GDScript::-1::1741120464::0::1::::<>Node2D<>::
+icon.svg::CompressedTexture2D::6113645812728527258::1740345408::1741127584::1::::<><>::
+::res://Proposal/::1740345303

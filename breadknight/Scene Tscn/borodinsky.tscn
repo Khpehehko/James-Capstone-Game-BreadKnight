@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://crux21ivvwpmb"]
+
+[ext_resource type="Texture2D" uid="uid://byd7l4xabliou" path="res://Character Assets/Borodinsky.png" id="1_puxnx"]
+[ext_resource type="Script" path="res://borodinsky.gd" id="1_r0uyp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ygg3"]
+radius = 159.0
+height = 342.0
+
+[node name="Borodinsky" type="CharacterBody2D"]
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("1_r0uyp")
+
+[node name="Borodinsky" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-5.96046e-08, 5.96046e-08)
+scale = Vector2(14.5833, 14.5833)
+texture = ExtResource("1_puxnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -15)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1ygg3")
+
+[node name="Bulletcooldown" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.8
+autostart = true
+
+[connection signal="timeout" from="Bulletcooldown" to="." method="_on_bulletcooldown_timeout"]

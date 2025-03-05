@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1x6h6ucmq8tv"]
+
+[ext_resource type="Texture2D" uid="uid://cnr568n8vbkjc" path="res://Object Assets/Bullet standard.png" id="1_26e00"]
+
+[node name="BulletBig" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(5.96046e-08, 0)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("1_26e00")
