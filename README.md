@@ -2,7 +2,7 @@
  
 Hi John!
 
-The game prototype is currently in the BreadKnight folder named "project.godot". We are not thinking of moving the game file to a different folder, becasue we are afraid that doing so will mess up the file structure and things won't load correctly.
+The game prototype is currently in the BreadKnight folder named "project.godot".
 
 Modified Mar 5:
 
