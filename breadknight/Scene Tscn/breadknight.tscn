@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7eeapa4n1cqp"]
+[gd_scene load_steps=5 format=3 uid="uid://b7eeapa4n1cqp"]
 
 [ext_resource type="Script" path="res://Breadknight.gd" id="1_j2luj"]
 [ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://Character Assets/breadknight proto1.png" id="2_odf7a"]
+[ext_resource type="PackedScene" uid="uid://cc8u32wml2y" path="res://Object Assets/gun.tscn" id="3_yi61x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpxey"]
 radius = 6.50467
@@ -24,6 +25,9 @@ rotation = 1.5708
 scale = Vector2(13.375, 13.375)
 shape = SubResource("CapsuleShape2D_hpxey")
 one_way_collision_margin = 0.0
+
+[node name="The Horn" parent="." instance=ExtResource("3_yi61x")]
+position = Vector2(139, 29)
 
 [node name="Bulletcooldown" type="Timer" parent="."]
 process_callback = 0

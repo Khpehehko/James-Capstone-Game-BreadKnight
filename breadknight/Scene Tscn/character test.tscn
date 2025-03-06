@@ -1,20 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfdrb8fujwrg0"]
+[gd_scene load_steps=5 format=3 uid="uid://bfdrb8fujwrg0"]
 
-[ext_resource type="Script" path="res://Scene Tscn/character_test.gd" id="1_yi7h1"]
 [ext_resource type="PackedScene" uid="uid://b7eeapa4n1cqp" path="res://Scene Tscn/breadknight.tscn" id="2_t2qy7"]
 [ext_resource type="PackedScene" uid="uid://crux21ivvwpmb" path="res://Scene Tscn/borodinsky.tscn" id="3_fncis"]
 [ext_resource type="PackedScene" uid="uid://bvhud7bs4cvc5" path="res://Scene Tscn/Baugette.tscn" id="4_86bjl"]
 [ext_resource type="PackedScene" uid="uid://byj3v1xra57kw" path="res://Scene Tscn/bullet.tscn" id="5_uips3"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_yi7h1")
 
 [node name="Bullet" parent="." instance=ExtResource("5_uips3")]
-position = Vector2(49, 181)
-collision_layer = 9
-collision_mask = 4
-collision_priority = 3.0
-speed = 200
+position = Vector2(1037, 67)
 
 [node name="Breadknight title" type="Label" parent="."]
 texture_filter = 1
@@ -28,20 +22,20 @@ text = "This is Mr Bread"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Breadknight" parent="." instance=ExtResource("2_t2qy7")]
+[node name="Breadknight" parent="." groups=["characters"] instance=ExtResource("2_t2qy7")]
 position = Vector2(311, 162)
 collision_mask = 4
 input_pickable = true
 speed = 400
 health = 32
 
-[node name="Baugette" parent="." instance=ExtResource("4_86bjl")]
+[node name="Baugette" parent="." groups=["characters"] instance=ExtResource("4_86bjl")]
 position = Vector2(1264, 147)
 collision_mask = 4
 input_pickable = true
 
-[node name="Borodinsky" parent="." instance=ExtResource("3_fncis")]
-position = Vector2(720, 238)
+[node name="Borodinsky" parent="." groups=["characters"] instance=ExtResource("3_fncis")]
+position = Vector2(1665, 199)
 collision_mask = 4
 input_pickable = true
 health = 64

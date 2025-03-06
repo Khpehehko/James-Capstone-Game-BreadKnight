@@ -1,7 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://crux21ivvwpmb"]
+[gd_scene load_steps=5 format=3 uid="uid://crux21ivvwpmb"]
 
 [ext_resource type="Texture2D" uid="uid://byd7l4xabliou" path="res://Character Assets/Borodinsky.png" id="1_puxnx"]
 [ext_resource type="Script" path="res://borodinsky.gd" id="1_r0uyp"]
+
+[sub_resource type="GDScript" id="GDScript_v2g7t"]
+script/source = "extends Sprite2D
+
+var active = false
+var my_array = [0, \"strings\", true]
+
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		$\"..\".borodinsky = self
+		
+	#modify this for each character
+	if event is InputEventMouseButton:
+		var character = get_tree().get_nodes_in_group(\"characters\")
+		for borodinsky in character:
+			if borodinsky == self:
+				borodinsky.active = true
+			else:
+				borodinsky.active = false
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ygg3"]
 radius = 159.0
@@ -17,6 +38,7 @@ texture_filter = 1
 position = Vector2(-5.96046e-08, 5.96046e-08)
 scale = Vector2(14.5833, 14.5833)
 texture = ExtResource("1_puxnx")
+script = SubResource("GDScript_v2g7t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, -15)
