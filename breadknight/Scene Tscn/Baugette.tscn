@@ -24,9 +24,7 @@ rotation = 1.5708
 scale = Vector2(8.9375, 8.9375)
 shape = SubResource("CapsuleShape2D_k6osy")
 
-[node name="Bulletcooldown" type="Timer" parent="."]
+[node name="SprintCooldown" type="Timer" parent="."]
 process_callback = 0
-wait_time = 1.5
+wait_time = 5.0
 autostart = true
-
-[connection signal="timeout" from="Bulletcooldown" to="." method="_on_bulletcooldown_timeout"]

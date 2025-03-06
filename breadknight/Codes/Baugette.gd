@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 1000
+const speed = 1000
 var input_direction = Input.get_vector("Left","Right","Up","Down")
+var velocitysprint = false
 
 #HP system WIP
 #Score system WTP
@@ -19,15 +20,16 @@ func get_input():
 	if Input.is_action_pressed("Left"):
 		$Baugette.flip_h=false
 	if Input.is_action_pressed("Up"):
-		velocity = input_direction * speed * 0.2
+		velocity = input_direction * speed * 0.3
 	elif Input.is_action_pressed("Down"):
-		velocity = input_direction * speed * 0.2
+		velocity = input_direction * speed * 0.3
 	else:
-		velocity = input_direction * speed * 1.65
-		
+		velocity = input_direction * speed * 1.75
+	if Input.is_action_pressed("Sprint"):
+		velocitysprint = true
+		velocitysprint = velocity
+		velocity = input_direction * speed * 3.25
 		
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
-	#if Input.is_action_pressed("Shoot"):
-	#	_shoot()

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 1000
+const speed = 1000
 
 #HP system WIP
 #Score system WTP
@@ -13,7 +13,7 @@ var roll = randf()
 	
 func get_input():
 	var input_direction = Input.get_vector("Left","Right","Up","Down")
-	velocity = input_direction * speed * 1.75
+	velocity = input_direction * speed * 1
 	
 func _physics_process(_delta):
 	get_input()

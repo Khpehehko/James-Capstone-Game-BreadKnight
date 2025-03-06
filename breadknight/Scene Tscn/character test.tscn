@@ -26,7 +26,6 @@ vertical_alignment = 1
 position = Vector2(311, 162)
 collision_mask = 4
 input_pickable = true
-speed = 400
 health = 32
 
 [node name="Baugette" parent="." groups=["characters"] instance=ExtResource("4_86bjl")]
