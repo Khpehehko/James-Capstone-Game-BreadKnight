@@ -8,7 +8,11 @@ Modified Mar 5:
 
 -We have differentiated the moving speed of each character
 
--We have improved the projectile system of each character
+-We have vastly improved and automated the projectile system of each character, now the projectile follows the cursor
+
+
+https://github.com/user-attachments/assets/b42217c6-c5ca-4b29-b7d2-5d0185a071c0
+
 
 -Next step will be modifying the projectile so that the bullet will follow approaching enemies, this will be done after we finish working on the enemy ai.
 
