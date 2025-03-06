@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvhud7bs4cvc5"]
 
-[ext_resource type="Script" path="res://Baugette.gd" id="1_nnrq1"]
+[ext_resource type="Script" path="res://Codes/Baugette.gd" id="1_nnrq1"]
 [ext_resource type="Texture2D" uid="uid://dnjvui4gnryil" path="res://Character Assets/Baugette.png" id="2_dayi1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6osy"]

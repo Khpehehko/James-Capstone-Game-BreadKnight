@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cc8u32wml2y"]
 
 [ext_resource type="Texture2D" uid="uid://bqluxho35ds4y" path="res://Object Assets/Gun.png" id="1_aqvqg"]
-[ext_resource type="Script" path="res://Scene Tscn/gun.gd" id="2_m4klh"]
+[ext_resource type="Script" path="res://Codes/gun.gd" id="2_m4klh"]
 
 [node name="Gun" type="Sprite2D"]
 texture_filter = 1

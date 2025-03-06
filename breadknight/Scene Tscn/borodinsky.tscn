@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://crux21ivvwpmb"]
 
 [ext_resource type="Texture2D" uid="uid://byd7l4xabliou" path="res://Character Assets/Borodinsky.png" id="1_puxnx"]
-[ext_resource type="Script" path="res://borodinsky.gd" id="1_r0uyp"]
+[ext_resource type="Script" path="res://Codes/borodinsky.gd" id="1_r0uyp"]
 
 [sub_resource type="GDScript" id="GDScript_v2g7t"]
 script/source = "extends Sprite2D

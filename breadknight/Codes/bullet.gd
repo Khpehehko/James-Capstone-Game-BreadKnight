@@ -1,15 +1,14 @@
-extends CharacterBody2D
+extends Node2D
 
-@export var speed = 40
-
-var direction : float
-var spawnPosition : Vector2
-var spawnRotation : float
-
-func _ready(): 
-	global_position = spawnPosition
-	global_rotation = spawnRotation
+const speed = 800
 	
-func _physics_process(_delta):
-	velocity = Vector2(0,-speed).rotated(direction)
-	move_and_slide()
+func _process(delta: float):
+	position += transform.x * speed * delta
+	
+func _on_hit_detector_area_entered(_area: Area2D) -> void:
+	queue_free()
+	
+func _on_timer_timeout():
+	queue_free()
+
+# Make sure bullet spawn and moves at character's facing direction 
