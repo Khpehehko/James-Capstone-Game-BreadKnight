@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfdrb8fujwrg0"]
+[gd_scene load_steps=4 format=3 uid="uid://bfdrb8fujwrg0"]
 
 [ext_resource type="PackedScene" uid="uid://b7eeapa4n1cqp" path="res://Scene Tscn/breadknight.tscn" id="2_t2qy7"]
-[ext_resource type="PackedScene" uid="uid://crux21ivvwpmb" path="res://Scene Tscn/borodinsky.tscn" id="3_fncis"]
-[ext_resource type="PackedScene" uid="uid://bvhud7bs4cvc5" path="res://Scene Tscn/Baugette.tscn" id="4_86bjl"]
-[ext_resource type="PackedScene" uid="uid://byj3v1xra57kw" path="res://Scene Tscn/bullet.tscn" id="5_uips3"]
+[ext_resource type="PackedScene" uid="uid://dwq3dodm4prvk" path="res://butter_patrol_spawner_1.tscn" id="3_41g6w"]
+[ext_resource type="PackedScene" uid="uid://c2np88am7hqf4" path="res://Scene Tscn/butter_patrol.tscn" id="5_ionm6"]
 
 [node name="main" type="Node2D"]
-
-[node name="Bullet" parent="." instance=ExtResource("5_uips3")]
-position = Vector2(1037, 67)
 
 [node name="Breadknight title" type="Label" parent="."]
 texture_filter = 1
@@ -22,19 +18,29 @@ text = "This is Mr Bread"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Breadknight" parent="." groups=["characters"] instance=ExtResource("2_t2qy7")]
-position = Vector2(311, 162)
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="Breadknight" parent="Characters" groups=["characters"] instance=ExtResource("2_t2qy7")]
+position = Vector2(384, 180)
+scale = Vector2(1.00283, 1)
 collision_mask = 4
+collision_priority = 3.0
 input_pickable = true
 health = 32
 
-[node name="Baugette" parent="." groups=["characters"] instance=ExtResource("4_86bjl")]
-position = Vector2(1264, 147)
-collision_mask = 4
-input_pickable = true
+[node name="Enemies" type="Node2D" parent="."]
 
-[node name="Borodinsky" parent="." groups=["characters"] instance=ExtResource("3_fncis")]
-position = Vector2(1665, 199)
-collision_mask = 4
-input_pickable = true
-health = 64
+[node name="Butter Patrol" parent="Enemies" groups=["enemies"] instance=ExtResource("5_ionm6")]
+position = Vector2(96, 220)
+
+[node name="Kitchen" type="Node2D" parent="."]
+
+[node name="Prop" type="Node2D" parent="."]
+
+[node name="Butter Patrol Spawner 1" parent="." instance=ExtResource("3_41g6w")]
+
+[node name="Butter Patrol Spawner 2" parent="." instance=ExtResource("3_41g6w")]
+position = Vector2(1063, 70)
+
+[node name="Butter Patrol Spawner 3" parent="." instance=ExtResource("3_41g6w")]
+position = Vector2(1407, 70)

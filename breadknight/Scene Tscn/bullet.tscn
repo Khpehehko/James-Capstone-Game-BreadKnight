@@ -1,30 +1,35 @@
 [gd_scene load_steps=4 format=3 uid="uid://byj3v1xra57kw"]
 
-[ext_resource type="Script" path="res://Codes/bullet.gd" id="1_bbvw4"]
+[ext_resource type="Script" path="res://Codes/bullet (2).gd" id="1_uxsy2"]
 [ext_resource type="PackedScene" uid="uid://c1x6h6ucmq8tv" path="res://Scene Tscn/bullet_big.tscn" id="2_1eu2v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ekdha"]
 radius = 22.0227
 
-[node name="Bullet" type="Node2D"]
-script = ExtResource("1_bbvw4")
+[node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_uxsy2")
 
-[node name="Bullet" parent="." instance=ExtResource("2_1eu2v")]
-
-[node name="Hit detector" type="Area2D" parent="Bullet"]
-position = Vector2(-1.70299e-08, 0)
-scale = Vector2(0.285714, 0.285714)
-collision_layer = 9
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet/Hit detector"]
-position = Vector2(3.55272e-15, 0)
-scale = Vector2(1, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.90799e-14, 0)
+scale = Vector2(0.999999, 0.999999)
 shape = SubResource("CircleShape2D_ekdha")
+
+[node name="Bullet2" parent="." instance=ExtResource("2_1eu2v")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
-[connection signal="area_entered" from="Bullet/Hit detector" to="." method="_on_hit_detector_area_entered"]
+[node name="Hit detector" type="Area2D" parent="."]
+position = Vector2(-4.61853e-14, 0)
+scale = Vector2(0.999999, 0.999999)
+collision_layer = 8
+collision_mask = 4
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit detector"]
+position = Vector2(3.55272e-15, 0)
+shape = SubResource("CircleShape2D_ekdha")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hit detector" to="." method="_on_hit_detector_body_entered"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfkpph5ebneag"]
+
+[sub_resource type="GDScript" id="GDScript_bnlu2"]
+script/source = "extends Node2D
+
+@onready var enemy = preload(\"res://Scene Tscn/butter_patrol.tscn\")
+
+func _on_timer_timeout():
+	var enemy = enemy.instantiate()
+	enemy.position = position
+	get_tree().get_node(\"Enemies\").add_child(enemy)
+"
+
+[node name="Spawner" type="Node2D"]
+script = SubResource("GDScript_bnlu2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
