@@ -22,9 +22,7 @@ By finishing the programming mentioned above, we will have a working prototype, 
 
 Update on Mar 8: Please welcome Mr. Baugette! He is a long, slim, tubular missile who wants to crush all the kitchen threats. He is an expert at drag racing and can move faster than anyone else.
 
-Although his profile means he is not good at going around corners, he can sprint like no one else if you press the space key while maneuvering him through obstacles. However, keep in mind that his can
-
-only sprint for 5 seconds before he runs out of stamina and enters a 7 sec recovery stage. Use the sprint wisely! 
+Although his profile means he is not good at going around corners, he can sprint like no one else if you press the space key while maneuvering him through obstacles. However, keep in mind that he can only sprint for 5 seconds before running out of stamina and enters a 7 sec recovery stage. Use the sprint wisely! 
 
 https://github.com/user-attachments/assets/77eef1ea-f20f-40e3-8bcf-3afad389d53c
 
