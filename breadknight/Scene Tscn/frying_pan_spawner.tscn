@@ -6,7 +6,7 @@
 script = ExtResource("1_7it5a")
 
 [node name="Frying Pan Timer" type="Timer" parent="."]
-wait_time = 3.5
+wait_time = 7.0
 autostart = true
 
 [connection signal="timeout" from="Frying Pan Timer" to="." method="_on_timer_timeout"]

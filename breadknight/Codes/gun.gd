@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 		
 func _shoot():
 	var bullet_instance = BULLET.instantiate()
-	get_tree().root.add_child(bullet_instance)
+	get_tree().root.add_child.call_deferred(bullet_instance)
 	bullet_instance.global_position = muzzle.global_position
 	bullet_instance.rotation = rotation
 	main.add_child.call_deferred(bullet_instance)

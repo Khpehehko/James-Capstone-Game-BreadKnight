@@ -16,3 +16,7 @@ func _physics_process(delta):
 		
 func _on_hit_detector_area_entered(area: Area2D) -> void:
 	queue_free()
+
+
+func _on_hit_detector_body_entered(body: Node2D) -> void:
+	queue_free()
