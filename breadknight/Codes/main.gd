@@ -11,12 +11,5 @@ var current_nodes: int
 var wave_ended
 #ending wave
 
-func _ready():
-	current_wave = 0
-	starting_nodes = get_child_count()
-	current_nodes = get_child_count()
-	#position_to_next_wave()
-	
-func _position_to_next_wave():
-	pass
+
 	

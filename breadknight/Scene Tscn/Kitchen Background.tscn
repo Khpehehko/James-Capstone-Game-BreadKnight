@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8snl6rq1a5ex"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_left = -1781.0
+offset_top = -93.0
+offset_right = 2033.0
+offset_bottom = 2434.0
+
+[node name="Stove" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1255.0
+offset_top = 25.0
+offset_right = 1775.0
+offset_bottom = 1137.0
+color = Color(0.693429, 0.69343, 0.693429, 1)
+
+[node name="countertop" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 25.0
+offset_right = 1224.0
+offset_bottom = 372.0
+color = Color(0.619608, 0.207843, 0, 1)

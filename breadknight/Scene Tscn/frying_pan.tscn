@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhd555una3eey"]
+
+[ext_resource type="Script" path="res://Codes/frying_pan.gd" id="1_5463e"]
+[ext_resource type="Texture2D" uid="uid://cfyk2vstni6vs" path="res://Enemies Assets/Frying Pan.png" id="2_e7nnl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0k0r"]
+radius = 245.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tufdi"]
+radius = 243.051
+
+[node name="Frying Pan" type="CharacterBody2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_5463e")
+
+[node name="FryingPan" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.00002, 1)
+scale = Vector2(9.96875, 9.96875)
+texture = ExtResource("2_e7nnl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-58, -48)
+shape = SubResource("CircleShape2D_s0k0r")
+
+[node name="Hit Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit Detector"]
+position = Vector2(-59, -50)
+shape = SubResource("CircleShape2D_tufdi")
+
+[connection signal="area_entered" from="Hit Detector" to="." method="_on_hit_detector_area_entered"]

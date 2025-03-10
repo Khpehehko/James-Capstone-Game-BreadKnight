@@ -3,8 +3,7 @@ extends Marker2D
 @onready var enemy = preload("res://Scene Tscn/butter_patrol.tscn")
 
 
-
-func _on_timer_timeout() -> void:
+func _on_butter_timer_timeout():
 	var ene = enemy.instantiate()
 	ene.position = position
-	get_parent().get_node("Enemies").add_child(ene) 
+	get_parent().get_node("root").add_child(ene)

@@ -1,46 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfdrb8fujwrg0"]
+[gd_scene load_steps=5 format=3 uid="uid://bfdrb8fujwrg0"]
 
+[ext_resource type="PackedScene" uid="uid://8snl6rq1a5ex" path="res://Scene Tscn/Kitchen Background.tscn" id="1_hbmir"]
 [ext_resource type="PackedScene" uid="uid://b7eeapa4n1cqp" path="res://Scene Tscn/breadknight.tscn" id="2_t2qy7"]
-[ext_resource type="PackedScene" uid="uid://dwq3dodm4prvk" path="res://butter_patrol_spawner_1.tscn" id="3_41g6w"]
-[ext_resource type="PackedScene" uid="uid://c2np88am7hqf4" path="res://Scene Tscn/butter_patrol.tscn" id="5_ionm6"]
+[ext_resource type="PackedScene" uid="uid://dwq3dodm4prvk" path="res://Scene Tscn/butter_patrol_spawner_1.tscn" id="3_41g6w"]
+[ext_resource type="PackedScene" uid="uid://bcnbcksdgxjn4" path="res://Scene Tscn/frying_pan_spawner.tscn" id="5_op5ei"]
 
 [node name="main" type="Node2D"]
 
-[node name="Breadknight title" type="Label" parent="."]
-texture_filter = 1
-offset_left = 16.0
-offset_top = 32.0
-offset_right = 143.0
-offset_bottom = 94.0
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 14
-text = "This is Mr Bread"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ColorRect" parent="." instance=ExtResource("1_hbmir")]
+offset_left = -140.0
+offset_top = -123.0
+offset_right = 4370.0
+offset_bottom = 2551.0
 
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Breadknight" parent="Characters" groups=["characters"] instance=ExtResource("2_t2qy7")]
-position = Vector2(384, 180)
+position = Vector2(454, 393)
 scale = Vector2(1.00283, 1)
 collision_mask = 4
 collision_priority = 3.0
 input_pickable = true
 health = 32
 
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Butter Patrol" parent="Enemies" groups=["enemies"] instance=ExtResource("5_ionm6")]
-position = Vector2(96, 220)
-
 [node name="Kitchen" type="Node2D" parent="."]
 
 [node name="Prop" type="Node2D" parent="."]
 
 [node name="Butter Patrol Spawner 1" parent="." instance=ExtResource("3_41g6w")]
+position = Vector2(2996, 2399)
 
 [node name="Butter Patrol Spawner 2" parent="." instance=ExtResource("3_41g6w")]
-position = Vector2(1063, 70)
+position = Vector2(3003, 4)
 
 [node name="Butter Patrol Spawner 3" parent="." instance=ExtResource("3_41g6w")]
-position = Vector2(1407, 70)
+position = Vector2(4, 2402)
+
+[node name="FryingPan Spawner" parent="." instance=ExtResource("5_op5ei")]
