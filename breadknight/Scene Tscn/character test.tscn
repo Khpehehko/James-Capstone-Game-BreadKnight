@@ -5,7 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://dwq3dodm4prvk" path="res://Scene Tscn/butter_patrol_spawner_1.tscn" id="3_41g6w"]
 [ext_resource type="PackedScene" uid="uid://bcnbcksdgxjn4" path="res://Scene Tscn/frying_pan_spawner.tscn" id="5_op5ei"]
 
-[node name="main" type="Node2D"]
+[node name="Main" type="Node2D"]
+
+[node name="FryingPan Spawner" parent="." instance=ExtResource("5_op5ei")]
+
+[node name="Butter Patrol Spawner 3" parent="." node_paths=PackedStringArray("player_target") instance=ExtResource("3_41g6w")]
+position = Vector2(4, 2406)
+player_target = NodePath("../Characters/Breadknight")
+
+[node name="Butter Patrol Spawner 2" parent="." instance=ExtResource("3_41g6w")]
+position = Vector2(3003, 4)
+
+[node name="Butter Patrol Spawner 1" parent="." node_paths=PackedStringArray("player_target") instance=ExtResource("3_41g6w")]
+position = Vector2(2996, 2399)
+player_target = NodePath("../Characters/Breadknight")
 
 [node name="ColorRect" parent="." instance=ExtResource("1_hbmir")]
 offset_left = -140.0
@@ -26,14 +39,3 @@ health = 32
 [node name="Kitchen" type="Node2D" parent="."]
 
 [node name="Prop" type="Node2D" parent="."]
-
-[node name="Butter Patrol Spawner 1" parent="." instance=ExtResource("3_41g6w")]
-position = Vector2(2996, 2399)
-
-[node name="Butter Patrol Spawner 2" parent="." instance=ExtResource("3_41g6w")]
-position = Vector2(3003, 4)
-
-[node name="Butter Patrol Spawner 3" parent="." instance=ExtResource("3_41g6w")]
-position = Vector2(4, 2402)
-
-[node name="FryingPan Spawner" parent="." instance=ExtResource("5_op5ei")]

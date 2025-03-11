@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@onready var main = get_tree().get_root().get_node("main")
+@onready var main = get_tree().get_root().get_node("Main")
 @onready var BULLET = load("res://Scene Tscn/bullet.tscn")
 @onready var muzzle: Marker2D = $Marker2D
 
