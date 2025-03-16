@@ -19,7 +19,6 @@ script = ExtResource("1_nnrq1")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Baugette" type="Sprite2D" parent="."]
-modulate = Color(0.420037, 0.212557, 0.12125, 1)
 texture_filter = 1
 position = Vector2(-12, -1)
 scale = Vector2(14.1875, 14.1875)

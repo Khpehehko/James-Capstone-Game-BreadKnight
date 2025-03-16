@@ -44,6 +44,7 @@ shape = SubResource("RectangleShape2D_05brj")
 
 [node name="boundary2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-33.25, 40)
+scale = Vector2(1.0008, 1)
 shape = SubResource("RectangleShape2D_05brj")
 
 [node name="boundary3" type="CollisionShape2D" parent="StaticBody2D"]
