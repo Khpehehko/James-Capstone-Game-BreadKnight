@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7eeapa4n1cqp"]
+[gd_scene load_steps=6 format=3 uid="uid://b7eeapa4n1cqp"]
 
 [ext_resource type="Script" path="res://Codes/Breadknight.gd" id="1_j2luj"]
 [ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://Character Assets/breadknight proto1.png" id="2_odf7a"]
@@ -8,10 +8,18 @@
 radius = 6.50467
 height = 16.2991
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53oi8"]
+radius = 89.0
+height = 218.0
+
 [node name="Breadknight" type="CharacterBody2D"]
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_j2luj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(6, 0)
+rotation = 1.5708
 
 [node name="Breadknight" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -33,5 +41,13 @@ position = Vector2(139, 29)
 process_callback = 0
 wait_time = 0.3
 autostart = true
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(13, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_53oi8")
 
 [connection signal="timeout" from="Bulletcooldown" to="." method="_on_bulletcooldown_timeout"]

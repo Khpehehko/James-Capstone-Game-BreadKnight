@@ -10,7 +10,5 @@ func _on_butter_timer_timeout():
 	
 	ene.position = position
 	ene.target = player_target
-	#print(player_target)
 	get_parent().get_node("Characters").add_child(ene)
 	ene.target = player_target
-	#print(player_target)

@@ -11,7 +11,7 @@ var damage: int = 1
 var text = "Attack:" + str(attack_power)
 var roll = randf()
 
-				
+
 func get_input():
 	var input_direction = Input.get_vector("Left","Right","Up","Down")
 	velocity = input_direction * speed * 0.5

@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Codes/butter_patrol_spawner_1.gd" id="1_t42i0"]
 
 [node name="Spawner" type="Marker2D"]
-position = Vector2(751, 70)
 scale = Vector2(0.788317, 0.996995)
 script = ExtResource("1_t42i0")
 

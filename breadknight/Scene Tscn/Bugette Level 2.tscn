@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://n7naylwftjek"]
+
+[ext_resource type="PackedScene" uid="uid://bvhud7bs4cvc5" path="res://Scene Tscn/Baugette.tscn" id="1_d531n"]
+[ext_resource type="PackedScene" uid="uid://dwq3dodm4prvk" path="res://Scene Tscn/butter_patrol_spawner_1.tscn" id="2_3db8a"]
+
+[node name="Baugette Test" type="Node2D"]
+
+[node name="Characters" type="Node2D" parent="."]
+position = Vector2(2, -1)
+scale = Vector2(0.788317, 0.996995)
+
+[node name="Baugette" parent="Characters" instance=ExtResource("1_d531n")]
+position = Vector2(1186.07, 420.263)
+scale = Vector2(1.26853, 1.00301)
+collision_mask = 4
+
+[node name="Spawner" parent="." node_paths=PackedStringArray("player_target") instance=ExtResource("2_3db8a")]
+position = Vector2(1543, -1)
+player_target = NodePath("../Characters/Baugette")

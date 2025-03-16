@@ -1,25 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvhud7bs4cvc5"]
+[gd_scene load_steps=5 format=3 uid="uid://bvhud7bs4cvc5"]
 
 [ext_resource type="Script" path="res://Codes/Baugette.gd" id="1_nnrq1"]
 [ext_resource type="Texture2D" uid="uid://dnjvui4gnryil" path="res://Character Assets/Baugette.png" id="2_dayi1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6osy"]
-radius = 9.3986
-height = 42.7413
+radius = 10.1818
+height = 47.6643
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8owpn"]
+radius = 95.0
+height = 432.0
 
 [node name="Baugette" type="CharacterBody2D"]
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_nnrq1")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="Baugette" type="Sprite2D" parent="."]
+modulate = Color(0.420037, 0.212557, 0.12125, 1)
 texture_filter = 1
 position = Vector2(-12, -1)
 scale = Vector2(14.1875, 14.1875)
 texture = ExtResource("2_dayi1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, 8)
+visible = false
+position = Vector2(-12, 6)
 rotation = 1.5708
 scale = Vector2(8.9375, 8.9375)
 shape = SubResource("CapsuleShape2D_k6osy")
@@ -28,3 +36,11 @@ shape = SubResource("CapsuleShape2D_k6osy")
 process_callback = 0
 wait_time = 5.0
 autostart = true
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+visible = false
+position = Vector2(-11, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8owpn")

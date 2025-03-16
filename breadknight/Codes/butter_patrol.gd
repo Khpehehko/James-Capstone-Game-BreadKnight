@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var target = $Characters/Breadknight
+@export var target = CharacterBody2D
 var speed = 350
 var enemy = position
 
@@ -9,7 +9,7 @@ func _ready():
 	print(target)
 	
 func _physics_process(delta):
-	var direction = (target.positsion-position).normalized()
+	var direction = (target.position-position).normalized()
 	velocity = direction * speed
 	if velocity.x > 0:
 		$ButterPatrol.flip_h=true
@@ -17,6 +17,6 @@ func _physics_process(delta):
 		$ButterPatrol.flip_h=false
 	move_and_slide()
 
-		
+	
 func _on_hit_detector_area_entered(area: Area2D):
 	queue_free()

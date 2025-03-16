@@ -1,19 +1,75 @@
-[gd_scene load_steps=3 format=3 uid="uid://cphutgfcwh3f7"]
+[gd_scene load_steps=5 format=3 uid="uid://cphutgfcwh3f7"]
 
 [ext_resource type="PackedScene" uid="uid://bvhud7bs4cvc5" path="res://Scene Tscn/Baugette.tscn" id="1_img0o"]
+[ext_resource type="PackedScene" uid="uid://2p0xvmdqscxj" path="res://Scene Tscn/kitchen_tilemap.tscn" id="2_855t2"]
 [ext_resource type="PackedScene" uid="uid://dwq3dodm4prvk" path="res://Scene Tscn/butter_patrol_spawner_1.tscn" id="2_pi15o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05brj"]
+size = Vector2(4772.5, 86)
 
 [node name="Baugette Test" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 28520.0
+offset_top = 23483.0
+offset_right = 28542.0
+offset_bottom = 23510.0
+scale = Vector2(-2006.06, -1234.95)
+color = Color(0.626416, 0.497416, 0.397977, 1)
+
+[node name="Kitchen tilemap" parent="." instance=ExtResource("2_855t2")]
+visibility_layer = 1023
+position = Vector2(888, 206)
+scale = Vector2(0.221082, 0.221082)
+
 [node name="Characters" type="Node2D" parent="."]
-position = Vector2(1229, 21)
+position = Vector2(2, -1)
 scale = Vector2(0.788317, 0.996995)
 
 [node name="Baugette" parent="Characters" instance=ExtResource("1_img0o")]
-position = Vector2(-4.29153e-06, -2.00603)
+position = Vector2(1186.07, 420.263)
 scale = Vector2(1.26853, 1.00301)
-collision_mask = 4
+collision_layer = 3
+collision_mask = 6
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1644, -766)
+collision_layer = 3
+collision_mask = 3
+
+[node name="boundary" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2462, 2061)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_05brj")
+
+[node name="boundary2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-33.25, 40)
+shape = SubResource("RectangleShape2D_05brj")
+
+[node name="boundary3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2393, 2081)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_05brj")
+
+[node name="boundary4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-33, 4099)
+shape = SubResource("RectangleShape2D_05brj")
+
+[node name="Spawner2" parent="." node_paths=PackedStringArray("player_target") instance=ExtResource("2_pi15o")]
+position = Vector2(3868, -568)
+scale = Vector2(0.621444, 0.993999)
+player_target = NodePath("../Characters/Baugette")
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("player_target") instance=ExtResource("2_pi15o")]
-position = Vector2(-1, 127)
+position = Vector2(-645, -555)
+player_target = NodePath("../Characters/Baugette")
+
+[node name="Spawner3" parent="." node_paths=PackedStringArray("player_target") instance=ExtResource("2_pi15o")]
+position = Vector2(-637, 3155)
+scale = Vector2(0.621444, 0.993999)
+player_target = NodePath("../Characters/Baugette")
+
+[node name="Spawner4" parent="." node_paths=PackedStringArray("player_target") instance=ExtResource("2_pi15o")]
+position = Vector2(3858, 3162)
+scale = Vector2(0.386192, 0.988034)
 player_target = NodePath("../Characters/Baugette")
