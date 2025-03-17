@@ -17,6 +17,5 @@ func _physics_process(delta):
 		$ButterPatrol.flip_h=false
 	move_and_slide()
 
-	
 func _on_hit_detector_area_entered(area: Area2D):
 	queue_free()

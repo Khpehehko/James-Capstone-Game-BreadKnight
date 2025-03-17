@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7eeapa4n1cqp"]
+[gd_scene load_steps=7 format=3 uid="uid://b7eeapa4n1cqp"]
 
 [ext_resource type="Script" path="res://Codes/Breadknight.gd" id="1_j2luj"]
 [ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://Character Assets/breadknight proto1.png" id="2_odf7a"]
 [ext_resource type="PackedScene" uid="uid://cc8u32wml2y" path="res://Object Assets/gun.tscn" id="3_yi61x"]
+[ext_resource type="PackedScene" uid="uid://ww4clcjei82w" path="res://health/healthbar.tscn" id="4_ni5ee"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpxey"]
 radius = 6.50467
 height = 16.2991
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53oi8"]
-radius = 89.0
-height = 218.0
+radius = 98.0
+height = 254.0
 
 [node name="Breadknight" type="CharacterBody2D"]
 motion_mode = 1
@@ -42,12 +43,19 @@ process_callback = 0
 wait_time = 0.3
 autostart = true
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="hitdetector" type="Area2D" parent="."]
 position = Vector2(13, -7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitdetector"]
+position = Vector2(1, -3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_53oi8")
 
+[node name="Healthbar" parent="." instance=ExtResource("4_ni5ee")]
+offset_left = -117.0
+offset_top = 157.0
+offset_right = 147.0
+offset_bottom = 189.0
+
 [connection signal="timeout" from="Bulletcooldown" to="." method="_on_bulletcooldown_timeout"]
+[connection signal="area_entered" from="hitdetector" to="." method="_on_hitdetector_area_entered"]

@@ -31,7 +31,6 @@ scale = Vector2(1.00283, 1)
 collision_mask = 6
 collision_priority = 3.0
 input_pickable = true
-health = 32
 
 [node name="FryingPan Spawner" parent="." instance=ExtResource("1_3qxli")]
 position = Vector2(-522, -418)
