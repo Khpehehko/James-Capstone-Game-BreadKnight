@@ -32,4 +32,10 @@ https://github.com/user-attachments/assets/6ada8f90-355e-47f1-a2f0-97d568b7f3a1
 
 For now, we are working on adding enemy animations, dmg and attack system (hitpoints and health), and embedding the kitchen scene.
 
+Update before class on Mar 17:
+
+The kitchen scene has now come alive and we are working on a healthbar system
+
+https://github.com/user-attachments/assets/2ef5dcb0-8351-41bb-95ef-df3cdfafd779
+
 Cheers!
