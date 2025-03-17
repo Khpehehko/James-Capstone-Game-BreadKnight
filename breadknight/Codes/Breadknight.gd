@@ -30,5 +30,19 @@ func _set_health(value):
 	healthbar.health = health 
 
 
-func _on_hitdetector_area_entered(area: Area2D) -> void:
-	health -= 1
+#func _on_hitdetector_area_entered(area: Area2D) -> void:
+	#health -= 1
+	#print(health)
+	#$Healthbar.health = health
+
+
+func _on_hitdetector_body_entered(body: Node2D):
+	if body.is_in_group("enemies"):
+		health -= 1
+		print(health)
+		$Healthbar.health = health
+		
+		
+func _on_hitdetector_area_entered(area: Area2D):
+	if area.is_in_group("environment"):
+		get_tree().change_scene_to_file("res://Scene Tscn/Baugette test.tscn")

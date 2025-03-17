@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvhud7bs4cvc5"]
+[gd_scene load_steps=6 format=3 uid="uid://bvhud7bs4cvc5"]
 
 [ext_resource type="Script" path="res://Codes/Baugette.gd" id="1_nnrq1"]
 [ext_resource type="Texture2D" uid="uid://dnjvui4gnryil" path="res://Character Assets/Baugette.png" id="2_dayi1"]
+[ext_resource type="PackedScene" uid="uid://ww4clcjei82w" path="res://health/healthbar.tscn" id="3_bcfxw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6osy"]
 radius = 10.1818
@@ -43,3 +44,9 @@ visible = false
 position = Vector2(-11, 6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8owpn")
+
+[node name="Healthbar" parent="." instance=ExtResource("3_bcfxw")]
+offset_left = -132.0
+offset_top = 132.0
+offset_right = 132.0
+offset_bottom = 164.0

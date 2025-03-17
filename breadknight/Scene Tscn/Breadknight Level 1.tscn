@@ -18,15 +18,15 @@ offset_bottom = 23053.0
 scale = Vector2(-2006.06, -1234.95)
 color = Color(0.626416, 0.497416, 0.397977, 1)
 
-[node name="Kitchen tilemap" parent="." instance=ExtResource("1_rtmkx")]
+[node name="Kitchen tilemap" parent="." groups=["environment"] instance=ExtResource("1_rtmkx")]
 visibility_layer = 1023
 position = Vector2(888, 206)
 scale = Vector2(0.221082, 0.221082)
 
 [node name="Characters" type="Node2D" parent="."]
 
-[node name="Breadknight" parent="Characters" groups=["characters"] instance=ExtResource("3_rb7m1")]
-position = Vector2(454, 393)
+[node name="Breadknight" parent="Characters" instance=ExtResource("3_rb7m1")]
+position = Vector2(2525, 781)
 scale = Vector2(1.00283, 1)
 collision_mask = 6
 collision_priority = 3.0

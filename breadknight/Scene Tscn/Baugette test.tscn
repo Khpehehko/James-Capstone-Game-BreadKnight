@@ -26,8 +26,8 @@ scale = Vector2(0.221082, 0.221082)
 position = Vector2(2, -1)
 scale = Vector2(0.788317, 0.996995)
 
-[node name="Baugette" parent="Characters" instance=ExtResource("1_img0o")]
-position = Vector2(1186.07, 420.263)
+[node name="Baugette" parent="Characters" groups=["characters"] instance=ExtResource("1_img0o")]
+position = Vector2(3725.66, 507.525)
 scale = Vector2(1.26853, 1.00301)
 collision_layer = 3
 collision_mask = 6

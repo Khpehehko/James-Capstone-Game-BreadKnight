@@ -3,8 +3,7 @@ extends ProgressBar
 
 @onready var timer = $Timer
 @onready var Damage_bar = $Damagebar
-
-var health = 0 : set = _set_health
+@export var health = 24: set = _set_health
 
 func _set_health(_new_health):
 	var previous_health = health
@@ -27,5 +26,5 @@ func _init_health(_health):
 	Damage_bar.max_value = health
 	
 
-func _on_timer_timeout() -> void:
+func _on_timer_timeout():
 	Damage_bar.value = health

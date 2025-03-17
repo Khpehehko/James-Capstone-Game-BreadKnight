@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2np88am7hqf4"]
+[gd_scene load_steps=5 format=3 uid="uid://c2np88am7hqf4"]
 
 [ext_resource type="Script" path="res://Codes/butter_patrol.gd" id="1_13h42"]
 [ext_resource type="Texture2D" uid="uid://ctysl2olqmdnn" path="res://Enemies Assets/Butter Patrol.png" id="2_u5uk0"]
@@ -6,7 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qchh7"]
 size = Vector2(91.25, 87.5)
 
-[node name="Butter Patrol" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oq1w"]
+size = Vector2(98, 94)
+
+[node name="Butter Patrol" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_13h42")
@@ -21,13 +24,13 @@ texture = ExtResource("2_u5uk0")
 position = Vector2(-5.625, -5.25)
 shape = SubResource("RectangleShape2D_qchh7")
 
-[node name="hit detector" type="Area2D" parent="."]
+[node name="hit detector" type="Area2D" parent="." groups=["enemies"]]
 collision_layer = 4
 collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit detector"]
-texture_filter = 1
-position = Vector2(-6, -5)
-shape = SubResource("RectangleShape2D_qchh7")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hit detector"]
+position = Vector2(-6, -6)
+shape = SubResource("RectangleShape2D_0oq1w")
 
 [connection signal="area_entered" from="hit detector" to="." method="_on_hit_detector_area_entered"]
+[connection signal="body_entered" from="hit detector" to="." method="_on_hit_detector_body_entered"]
