@@ -1,34 +1,57 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg02rc0ylr6ka"]
+[gd_scene load_steps=7 format=3 uid="uid://dg02rc0ylr6ka"]
 
 [ext_resource type="PackedScene" uid="uid://bcnbcksdgxjn4" path="res://Scene Tscn/frying_pan_spawner.tscn" id="1_3qxli"]
 [ext_resource type="PackedScene" uid="uid://2p0xvmdqscxj" path="res://Scene Tscn/kitchen_tilemap.tscn" id="1_rtmkx"]
 [ext_resource type="PackedScene" uid="uid://dwq3dodm4prvk" path="res://Scene Tscn/butter_patrol_spawner_1.tscn" id="2_ossvw"]
 [ext_resource type="PackedScene" uid="uid://b7eeapa4n1cqp" path="res://Scene Tscn/breadknight.tscn" id="3_rb7m1"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0u5gw"]
+outlines = Array[PackedVector2Array]([PackedVector2Array(13.9941, 19.4761, 11.9229, 19.4777, 11.3386, 19.468, 11.3401, 15.5974, 14.0758, 15.6136)])
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x68af"]
 size = Vector2(4772.5, 86)
 
 [node name="Main" type="Node2D"]
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["environment"]]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." groups=["environment"]]
+position = Vector2(27045, 23026)
+rotation = 3.14159
+scale = Vector2(2006.06, 1234.95)
+navigation_polygon = SubResource("NavigationPolygon_0u5gw")
+
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 27045.0
-offset_top = 23026.0
-offset_right = 27067.0
-offset_bottom = 23053.0
+offset_left = 27028.0
+offset_top = 23210.0
+offset_right = 27050.0
+offset_bottom = 23237.0
 scale = Vector2(-2006.06, -1234.95)
-color = Color(0.626416, 0.497416, 0.397977, 1)
+color = Color(0.705882, 0.705882, 0.705882, 1)
 
 [node name="Kitchen tilemap" parent="." groups=["environment"] instance=ExtResource("1_rtmkx")]
 visibility_layer = 1023
 position = Vector2(888, 206)
 scale = Vector2(0.221082, 0.221082)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Kitchen tilemap"]
+position = Vector2(-1818.33, -5644.96)
+scale = Vector2(37.4346, 37.4346)
+collision_layer = 34
+collision_mask = 13
+
+[node name="Obstacle" type="CollisionPolygon2D" parent="Kitchen tilemap/StaticBody2D" groups=["obstacle"]]
+position = Vector2(7.62939e-06, 0)
+polygon = PackedVector2Array(-55.0026, 75.8656, 391.91, 75.8656, 391.964, 428.4, 328.413, 427.813, 327.825, 331.164, 232.058, 330.87, 231.47, 298.36, 169.389, 298.36, 169.389, 331.458, 7.23929, 331.405, 7.23929, 267.266, 327.344, 266.678, 327.569, 139.437, -55.43, 139.523)
+one_way_collision_margin = 0.0
+
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Breadknight" parent="Characters" instance=ExtResource("3_rb7m1")]
-position = Vector2(2525, 781)
+position = Vector2(2279, 502)
 scale = Vector2(1.00283, 1)
-collision_mask = 6
+collision_layer = 33
+collision_mask = 38
 collision_priority = 3.0
 input_pickable = true
 

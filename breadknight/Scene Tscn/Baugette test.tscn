@@ -15,7 +15,7 @@ offset_top = 23483.0
 offset_right = 28542.0
 offset_bottom = 23510.0
 scale = Vector2(-2006.06, -1234.95)
-color = Color(0.626416, 0.497416, 0.397977, 1)
+color = Color(0.705882, 0.705882, 0.705882, 1)
 
 [node name="Kitchen tilemap" parent="." instance=ExtResource("2_855t2")]
 visibility_layer = 1023

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 characters=""
 enemies=""
 environment=""
+obstacle=""
 
 [input]
 
@@ -56,3 +57,4 @@ Sprint={
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Bullet"
 2d_physics/layer_5="Props"
+2d_physics/layer_6="Obstacle"

@@ -10,8 +10,8 @@ size = Vector2(91.25, 87.5)
 size = Vector2(98, 94)
 
 [node name="Butter Patrol" type="CharacterBody2D" groups=["enemies"]]
-collision_layer = 4
-collision_mask = 9
+collision_layer = 36
+collision_mask = 41
 script = ExtResource("1_13h42")
 
 [node name="ButterPatrol" type="Sprite2D" parent="."]
