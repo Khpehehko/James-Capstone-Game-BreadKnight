@@ -58,14 +58,14 @@ tile_set = SubResource("TileSet_flyxb")
 [node name="Change level" type="Area2D" parent="."]
 position = Vector2(4129.69, 11819.1)
 
-[node name="Change scene timer" type="Timer" parent="Change level"]
-wait_time = 5.0
+[node name="winning timer" type="Timer" parent="Change level"]
+wait_time = 60.0
+one_shot = true
+autostart = true
 
 [node name="Exit Area" type="CollisionShape2D" parent="Change level"]
 position = Vector2(332.456, 929.52)
 shape = SubResource("RectangleShape2D_mrf16")
 
-[node name="Countdown" type="Timer" parent="."]
-
 [connection signal="body_entered" from="Change level" to="." method="_on_change_level_body_entered"]
-[connection signal="timeout" from="Change level/Change scene timer" to="." method="_on_change_scene_timer_timeout"]
+[connection signal="timeout" from="Change level/winning timer" to="." method="_on_change_scene_timer_timeout"]

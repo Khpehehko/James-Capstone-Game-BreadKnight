@@ -10,6 +10,6 @@ func _on_change_level_body_entered(body: CharacterBody2D) -> void:
 
 func _on_change_scene_timer_timeout() -> void:
 	if breadknight:
-		get_tree().change_scene_to_file("res://Scene Tscn/Baugette test.tscn")
+		get_tree().change_scene_to_file("res://success.tscn")
 	elif baugette:
 		get_tree().change_scene_to_file("res://Scene Tscn/Breadknight Level 1.tscn")
