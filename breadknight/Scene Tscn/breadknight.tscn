@@ -52,10 +52,10 @@ collision_layer = 5
 collision_mask = 5
 
 [node name="Healthbar" parent="hitdetector" instance=ExtResource("4_ni5ee")]
-offset_left = -130.0
-offset_top = 164.0
-offset_right = 134.0
-offset_bottom = 196.0
+offset_left = -1111.0
+offset_top = -470.0
+offset_right = -581.0
+offset_bottom = -428.0
 
 [node name="hurtbox" type="CollisionShape2D" parent="hitdetector"]
 position = Vector2(1, 11)
