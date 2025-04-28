@@ -11,7 +11,8 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(13.9941, 19.4761, 11.92
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x68af"]
 size = Vector2(4772.5, 86)
 
-[node name="Main" type="Node2D"]
+[node name="level" type="Node2D"]
+position = Vector2(-1, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["environment"]]
 

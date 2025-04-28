@@ -6,7 +6,6 @@ func _process(delta: float):
 	position += transform.x * speed * delta
 	
 
-
 func _on_timer_timeout():
 	queue_free()
 

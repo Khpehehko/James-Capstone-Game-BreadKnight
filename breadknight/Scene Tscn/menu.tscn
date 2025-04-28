@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://dspwc1a55qgv"]
+
+[ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://Character Assets/breadknight proto1.png" id="1_erbec"]
+[ext_resource type="Script" path="res://Scene Tscn/menu.gd" id="1_osxcf"]
+
+[sub_resource type="SystemFont" id="SystemFont_ok8qm"]
+
+[sub_resource type="SystemFont" id="SystemFont_ds7bg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6j1xy"]
+line_spacing = 7.0
+font = SubResource("SystemFont_ds7bg")
+font_size = 64
+font_color = Color(0.560784, 0.337255, 0.231373, 1)
+outline_size = 12
+outline_color = Color(0.964706, 0.901961, 0.866667, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_4rth1"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_osxcf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 27748.0
+offset_top = 21869.0
+offset_right = 27770.0
+offset_bottom = 21896.0
+scale = Vector2(-2006.06, -1234.95)
+color = Color(0.705882, 0.705882, 0.705882, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1153.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BreadknightProto1" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+position = Vector2(413, 243)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("1_erbec")
+
+[node name="Bread Knight" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ok8qm")
+text = "BreadKnight"
+label_settings = SubResource("LabelSettings_6j1xy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(128, 48)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_4rth1")
+theme_override_font_sizes/font_size = 36
+text = "Start"
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(128, 48)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_4rth1")
+theme_override_font_sizes/font_size = 36
+text = "Exit"
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_button_down"]
