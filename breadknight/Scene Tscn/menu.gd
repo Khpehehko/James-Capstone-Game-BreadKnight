@@ -3,7 +3,7 @@ extends Node2D
 
 @onready var start = $MarginContainer/HBoxContainer/VBoxContainer/Start as Button
 @onready var exit = $MarginContainer/HBoxContainer/VBoxContainer/Exit as Button
-@onready var Tutorial = preload("res://tutorial.tscn") as PackedScene
+@onready var Tutorial = preload("res://Scene Tscn/tutorial.tscn") as PackedScene
 
 func _ready():
 	start.button_down.connect(_on_start_pressed)

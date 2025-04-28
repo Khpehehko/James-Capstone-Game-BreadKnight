@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7eeapa4n1cqp"]
+[gd_scene load_steps=9 format=3 uid="uid://b7eeapa4n1cqp"]
 
 [ext_resource type="Script" path="res://Codes/Breadknight.gd" id="1_j2luj"]
 [ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://Character Assets/breadknight proto1.png" id="2_odf7a"]
@@ -13,14 +13,16 @@ height = 16.2991
 radius = 122.0
 height = 276.0
 
+[sub_resource type="SystemFont" id="SystemFont_4ur42"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gj83y"]
+font = SubResource("SystemFont_4ur42")
+font_size = 48
+
 [node name="Breadknight" type="CharacterBody2D" groups=["characters"]]
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_j2luj")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(6, 0)
-rotation = 1.5708
 
 [node name="Breadknight" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -59,6 +61,47 @@ position = Vector2(1, 11)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_53oi8")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(6, 0)
+rotation = 1.5708
+
+[node name="Label2" type="Label" parent="Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 204.681
+offset_top = 241.999
+offset_right = 681.681
+offset_bottom = 308.999
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.57223
+text = "Time Remaining: "
+label_settings = SubResource("LabelSettings_gj83y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 205.68
+offset_top = 14.9993
+offset_right = 682.68
+offset_bottom = 81.9993
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.57223
+text = "00"
+label_settings = SubResource("LabelSettings_gj83y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Camera2D"]
+wait_time = 60.0
+autostart = true
+
 [connection signal="timeout" from="Bulletcooldown" to="." method="_on_bulletcooldown_timeout"]
 [connection signal="area_entered" from="hitdetector" to="." method="_on_hitdetector_area_entered"]
 [connection signal="body_entered" from="hitdetector" to="." method="_on_hitdetector_body_entered"]
+[connection signal="timeout" from="Camera2D/Timer" to="." method="_on_timer_timeout"]

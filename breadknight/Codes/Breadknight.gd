@@ -6,11 +6,23 @@ const speed = 1000
 #Score system WTP
 @onready var healthbar = $hitdetector/Healthbar
 @export var health = 1
+@export var label = Label
+@export var time = Timer
 var end_game = preload("res://Scene Tscn/menu.tscn") as PackedScene
 
 func _ready():
-	health = 16
+	health = 20
 	healthbar._init_health(health)
+	label = $Camera2D/Label
+	time = $Camera2D/Timer
+	
+	time.start()
+	
+func _update_label():
+	label.text = str(ceil(time.time_left))
+	
+func _process(delta: float) -> void:
+	_update_label()
 	
 func get_input():
 	var input_direction = Input.get_vector("Left","Right","Up","Down")

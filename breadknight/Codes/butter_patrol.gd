@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @export var target = CharacterBody2D
 @onready var health = $hitdetector/Healthbar
-var speed = 550
+var speed = 500
 var enemy = position
 
 

@@ -7,7 +7,7 @@
 size = Vector2(91.25, 87.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oq1w"]
-size = Vector2(98, 94)
+size = Vector2(127, 100)
 
 [node name="Butter Patrol" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 36
@@ -29,7 +29,7 @@ collision_layer = 4
 collision_mask = 9
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hit detector"]
-position = Vector2(-6, -6)
+position = Vector2(1.5, -5)
 shape = SubResource("RectangleShape2D_0oq1w")
 
 [connection signal="area_entered" from="hit detector" to="." method="_on_hit_detector_area_entered"]

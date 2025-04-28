@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcg6lf10rdfqq"]
+
+[ext_resource type="AudioStream" uid="uid://bo5ru2i8nu88d" path="res://Music/good-morning-cafe-jazz-227888.mp3" id="1_eos8a"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+position = Vector2(514, 245)
+stream = ExtResource("1_eos8a")
+autoplay = true
+max_distance = 110961.0

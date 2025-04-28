@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 800
+const speed = 2000
 	
 func _process(delta: float):
 	position += transform.x * speed * delta
