@@ -74,10 +74,10 @@ text = "Start"
 
 [node name="Tutorial" type="Label" parent="."]
 texture_filter = 1
-offset_left = -37.0
-offset_top = -33.0
-offset_right = 1182.0
-offset_bottom = 340.0
+offset_left = -39.0
+offset_top = -67.0
+offset_right = 1180.0
+offset_bottom = 306.0
 theme_override_fonts/font = SubResource("SystemFont_8ru7n")
 text = "Move with \"WASD\"
 Bullet Shoots Automatically
@@ -87,6 +87,32 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Tutorial" type="Label" parent="Tutorial"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_top = 404.0
+offset_right = 1219.0
+offset_bottom = 777.0
+theme_override_fonts/font = SubResource("SystemFont_8ru7n")
+text = "Warning: You die if your HP bar is down to zero"
+label_settings = SubResource("LabelSettings_qdhsu")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ba0eh")
+
+[node name="Tutorial2" type="Label" parent="Tutorial"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 421.0
+offset_right = 1227.0
+offset_bottom = 794.0
+theme_override_fonts/font = SubResource("SystemFont_8ru7n")
+text = "Adjust trajectory with cursor, good luck!"
+label_settings = SubResource("LabelSettings_qdhsu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial" type="Label" parent="Tutorial/Tutorial2"]
 visible = false
 texture_filter = 1
 layout_mode = 0
