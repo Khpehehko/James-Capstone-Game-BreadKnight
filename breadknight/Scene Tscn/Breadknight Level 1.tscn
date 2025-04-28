@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://dwq3dodm4prvk" path="res://Scene Tscn/butter_patrol_spawner_1.tscn" id="2_ossvw"]
 [ext_resource type="PackedScene" uid="uid://b7eeapa4n1cqp" path="res://Scene Tscn/breadknight.tscn" id="3_rb7m1"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_0u5gw"]
-outlines = Array[PackedVector2Array]([PackedVector2Array(13.9941, 19.4761, 11.9229, 19.4777, 11.3386, 19.468, 11.3401, 15.5974, 14.0758, 15.6136)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ly24w"]
+vertices = PackedVector2Array(4518.83, 3972.85, -1310.68, 3892.14, -1148.3, -1304.01, 4434.15, -1310.98)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1158, -1314, 4444, -1321, 4529, 3983, -1321, 3902)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x68af"]
 size = Vector2(4772.5, 86)
@@ -15,18 +17,13 @@ size = Vector2(4772.5, 86)
 position = Vector2(-1, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["environment"]]
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." groups=["environment"]]
-position = Vector2(27045, 23026)
-rotation = 3.14159
-scale = Vector2(2006.06, 1234.95)
-navigation_polygon = SubResource("NavigationPolygon_0u5gw")
+navigation_layers = 255
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 27028.0
-offset_top = 23210.0
-offset_right = 27050.0
-offset_bottom = 23237.0
+offset_left = 27023.0
+offset_top = 23719.0
+offset_right = 27045.0
+offset_bottom = 23746.0
 scale = Vector2(-2006.06, -1234.95)
 color = Color(0.705882, 0.705882, 0.705882, 1)
 
@@ -34,6 +31,11 @@ color = Color(0.705882, 0.705882, 0.705882, 1)
 visibility_layer = 1023
 position = Vector2(888, 206)
 scale = Vector2(0.221082, 0.221082)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Kitchen tilemap" groups=["environment"]]
+position = Vector2(-4016.61, -931.781)
+scale = Vector2(4.52321, 4.52321)
+navigation_polygon = SubResource("NavigationPolygon_ly24w")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Kitchen tilemap"]
 position = Vector2(-1818.33, -5644.96)

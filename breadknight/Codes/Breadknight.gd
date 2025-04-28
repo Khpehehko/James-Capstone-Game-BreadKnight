@@ -6,6 +6,7 @@ const speed = 1000
 #Score system WTP
 @onready var healthbar = $Healthbar
 @export var health = 24
+var end_game = preload("res://Scene Tscn/menu.tscn") as PackedScene
 
 func _ready():
 	health = 24
@@ -23,11 +24,16 @@ func _physics_process(_delta):
 		$Breadknight.flip_h=true
 	if Input.is_action_pressed("Left"):
 		$Breadknight.flip_h=false
+		
+func _end_game():
+	get_tree().change_scene_to_packed(end_game)
 
 func _set_health(value):
 	if health <= 0:
 		queue_free()
-	healthbar.health = health 
+		_end_game()
+	healthbar.health = health
+
 
 
 #func _on_hitdetector_area_entered(area: Area2D) -> void:

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var nav: NavigationAgent2D = $NavigationAgent2D
 @export var target = CharacterBody2D
 var speed = 350
 var enemy = position
@@ -19,7 +20,6 @@ func _physics_process(delta):
 
 #func _on_hit_detector_area_entered(area: Area2D):
 	#queue_free()
-
 
 func _on_hit_detector_body_entered(body: Node2D):
 	queue_free()

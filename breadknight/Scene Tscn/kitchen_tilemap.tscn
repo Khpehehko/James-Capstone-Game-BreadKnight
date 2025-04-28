@@ -65,5 +65,7 @@ wait_time = 5.0
 position = Vector2(332.456, 929.52)
 shape = SubResource("RectangleShape2D_mrf16")
 
+[node name="Countdown" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Change level" to="." method="_on_change_level_body_entered"]
 [connection signal="timeout" from="Change level/Change scene timer" to="." method="_on_change_scene_timer_timeout"]
