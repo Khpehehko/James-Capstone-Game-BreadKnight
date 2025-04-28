@@ -4,8 +4,6 @@ extends CharacterBody2D
 var speed = 500
 var enemy = position
 
-
-	
 func _ready():
 	print(target)
 	

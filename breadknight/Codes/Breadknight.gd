@@ -8,7 +8,6 @@ const speed = 1000
 @export var health = 1
 @export var label = Label
 @export var time = Timer
-var end_game = preload("res://Scene Tscn/menu.tscn") as PackedScene
 
 func _ready():
 	health = 20
@@ -44,9 +43,8 @@ func _set_health(value):
 
 func _end_game():
 	if health <= 0:
-		get_tree().change_scene_to_packed(end_game)
+		get_tree().change_scene_to_("res://Scene Tscn/success.tscn")
 	
-
 func _on_hitdetector_body_entered(body: CharacterBody2D):
 	if body.is_in_group("enemies"):
 		health -= 1
@@ -54,8 +52,6 @@ func _on_hitdetector_body_entered(body: CharacterBody2D):
 		$hitdetector/Healthbar.health = health
 	if health <= 0:
 		queue_free()
-		
-		
-func _on_hitdetector_area_entered(area: Area2D):
-	if area.is_in_group("environment"):
-		get_tree().change_scene_to_file("res://Scene Tscn/Baugette test.tscn")
+
+func _on_timer_timeout():
+	get_tree().change_scene_to_file("res://Scene Tscn/success.tscn")

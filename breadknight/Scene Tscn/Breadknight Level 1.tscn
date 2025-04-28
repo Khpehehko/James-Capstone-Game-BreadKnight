@@ -62,6 +62,11 @@ position = Vector2(62.4689, 191.394)
 polygon = PackedVector2Array(-117.688, 76.2435, 40.3571, 76.9685, 41.2029, 139.679, -54.0108, 139.317, -54.8567, 203.84, -120.346, 202.631)
 one_way_collision_margin = 0.0
 
+[node name="Obstacle6" type="CollisionPolygon2D" parent="Kitchen tilemap/StaticBody2D" groups=["obstacle"]]
+position = Vector2(-160.945, 351.372)
+polygon = PackedVector2Array(233.08, 75.7601, 328.657, 75.7602, 328.415, 139.075, 232.718, 138.954)
+one_way_collision_margin = 0.0
+
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Breadknight" parent="Characters" instance=ExtResource("3_rb7m1")]
