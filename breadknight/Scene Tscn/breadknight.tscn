@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7eeapa4n1cqp"]
+[gd_scene load_steps=10 format=3 uid="uid://b7eeapa4n1cqp"]
 
 [ext_resource type="Script" path="res://Codes/Breadknight.gd" id="1_j2luj"]
 [ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://Character Assets/breadknight proto1.png" id="2_odf7a"]
 [ext_resource type="PackedScene" uid="uid://cc8u32wml2y" path="res://Object Assets/gun.tscn" id="3_yi61x"]
 [ext_resource type="PackedScene" uid="uid://ww4clcjei82w" path="res://health/healthbar.tscn" id="4_ni5ee"]
+[ext_resource type="Script" path="res://Scene Tscn/score.gd" id="5_46nxr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpxey"]
 radius = 6.50467
@@ -64,38 +65,70 @@ shape = SubResource("CapsuleShape2D_53oi8")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(6, 0)
 rotation = 1.5708
+zoom = Vector2(0.5, 0.5)
 
 [node name="Label2" type="Label" parent="Camera2D"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 204.681
-offset_top = 241.999
-offset_right = 681.681
-offset_bottom = 308.999
+offset_left = -630.316
+offset_top = 1104.0
+offset_right = -153.316
+offset_bottom = 1171.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.57223
 text = "Time Remaining: "
 label_settings = SubResource("LabelSettings_gj83y")
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Camera2D"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 205.68
-offset_top = 14.9993
-offset_right = 682.68
-offset_bottom = 81.9993
+offset_left = -629.316
+offset_top = 1045.0
+offset_right = -152.316
+offset_bottom = 1112.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.57223
 text = "00"
 label_settings = SubResource("LabelSettings_gj83y")
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -568.316
+offset_top = 1106.0
+offset_right = -91.316
+offset_bottom = 1173.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.57223
+text = "Score:"
+label_settings = SubResource("LabelSettings_gj83y")
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -566.996
+offset_top = 1044.0
+offset_right = -89.9963
+offset_bottom = 1111.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.57223
+text = "00"
+label_settings = SubResource("LabelSettings_gj83y")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("5_46nxr")
 
 [node name="Timer" type="Timer" parent="Camera2D"]
 wait_time = 60.0
