@@ -22,6 +22,7 @@ Music="*res://Scene Tscn/music.tscn"
 [display]
 
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://Character Assets/cursor.png"
 
 [global_group]
 
