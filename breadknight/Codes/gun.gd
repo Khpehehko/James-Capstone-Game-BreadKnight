@@ -3,6 +3,7 @@ extends Sprite2D
 @onready var main = get_tree().get_root().get_node("Main")
 @onready var BULLET = load("res://Scene Tscn/bullet.tscn")
 @onready var muzzle: Marker2D = $Marker2D
+@onready var GunSFX: AudioStreamPlayer2D = $GunSFX
 
 func _ready():
 	_shoot()
@@ -25,3 +26,4 @@ func _shoot():
 
 func _on_cooldown_timeout() -> void:
 	_shoot()
+	GunSFX.play()

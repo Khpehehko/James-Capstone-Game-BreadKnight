@@ -10,7 +10,7 @@ const speed = 1000
 @export var time = Timer
 
 func _ready():
-	health = 20
+	health = 16
 	healthbar._init_health(health)
 	label = $Camera2D/Label
 	time = $Camera2D/Timer
@@ -35,15 +35,11 @@ func _physics_process(_delta):
 		$Breadknight.flip_h=true
 	if Input.is_action_pressed("Left"):
 		$Breadknight.flip_h=false
+	if health <= 0:
+		get_tree().change_scene_to_file("res://Scene Tscn/failed.tscn")
 
 func _set_health(value):
-	if health <= 0:
-		queue_free()
 	healthbar.health = health
-
-func _end_game():
-	if health <= 0:
-		get_tree().change_scene_to_("res://Scene Tscn/success.tscn")
 	
 func _on_hitdetector_body_entered(body: CharacterBody2D):
 	if body.is_in_group("enemies"):

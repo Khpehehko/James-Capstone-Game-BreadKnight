@@ -5,11 +5,7 @@ extends Marker2D
 @export var player_target : CharacterBody2D
 
 func _on_butter_timer_timeout():
-	if player_target.health <=0:
-		queue_free()
-	elif player_target.health >0:
 		var ene = enemy.instantiate()
-	
 		ene.position = position
 		ene.target = player_target
 		get_parent().get_node("Characters").add_child(ene)

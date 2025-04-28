@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @export var target = CharacterBody2D
 @onready var health = $hitdetector/Healthbar
+@onready var PopSFX: AudioStreamPlayer2D = $Pop
 var speed = 500
 var enemy = position
 
@@ -20,5 +21,6 @@ func _physics_process(float):
 	move_and_slide()
 
 func _on_hit_detector_body_entered(body: Node2D):
+	PopSFX.play()
 	queue_free()
 	

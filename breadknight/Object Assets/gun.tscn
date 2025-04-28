@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc8u32wml2y"]
+[gd_scene load_steps=4 format=3 uid="uid://cc8u32wml2y"]
 
 [ext_resource type="Texture2D" uid="uid://bqluxho35ds4y" path="res://Object Assets/Gun.png" id="1_aqvqg"]
 [ext_resource type="Script" path="res://Codes/gun.gd" id="2_m4klh"]
+[ext_resource type="AudioStream" uid="uid://coefhx1o0mjwi" path="res://Music/pop-268648.mp3" id="3_c144b"]
 
 [node name="Gun" type="Sprite2D"]
 texture_filter = 1
@@ -18,5 +19,8 @@ scale = Vector2(0.276923, 0.276923)
 process_callback = 0
 wait_time = 0.3
 autostart = true
+
+[node name="GunSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c144b")
 
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

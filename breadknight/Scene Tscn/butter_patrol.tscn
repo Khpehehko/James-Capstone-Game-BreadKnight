@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2np88am7hqf4"]
+[gd_scene load_steps=6 format=3 uid="uid://c2np88am7hqf4"]
 
 [ext_resource type="Script" path="res://Codes/butter_patrol.gd" id="1_13h42"]
 [ext_resource type="Texture2D" uid="uid://ctysl2olqmdnn" path="res://Enemies Assets/Butter Patrol.png" id="2_u5uk0"]
+[ext_resource type="AudioStream" uid="uid://dxgvfgaywovmm" path="res://Music/pop-sound-effect-226108.mp3" id="3_axygq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qchh7"]
 size = Vector2(91.25, 87.5)
@@ -31,6 +32,11 @@ collision_mask = 9
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hit detector"]
 position = Vector2(1.5, -5)
 shape = SubResource("RectangleShape2D_0oq1w")
+
+[node name="Pop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_axygq")
+volume_db = 10.667
+pitch_scale = 1.51
 
 [connection signal="area_entered" from="hit detector" to="." method="_on_hit_detector_area_entered"]
 [connection signal="body_entered" from="hit detector" to="." method="_on_hit_detector_body_entered"]

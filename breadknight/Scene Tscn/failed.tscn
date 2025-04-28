@@ -1,26 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://s6skc4h7wc6k"]
+[gd_scene load_steps=7 format=3 uid="uid://bek0i8bw4q86c"]
 
-[ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://Character Assets/breadknight proto1.png" id="2_gk3my"]
-[ext_resource type="Script" path="res://Scene Tscn/failed.gd" id="2_q4mya"]
+[ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://Character Assets/breadknight proto1.png" id="1_agu35"]
+[ext_resource type="Script" path="res://Scene Tscn/failed.gd" id="2_t8toh"]
 
-[sub_resource type="SystemFont" id="SystemFont_gi54n"]
+[sub_resource type="SystemFont" id="SystemFont_r2njs"]
 subpixel_positioning = 0
 
-[sub_resource type="SystemFont" id="SystemFont_52aja"]
+[sub_resource type="SystemFont" id="SystemFont_nk352"]
 subpixel_positioning = 0
 
-[sub_resource type="SystemFont" id="SystemFont_no4k8"]
+[sub_resource type="SystemFont" id="SystemFont_m2x2g"]
 subpixel_positioning = 0
 
-[sub_resource type="LabelSettings" id="LabelSettings_jwoyp"]
+[sub_resource type="LabelSettings" id="LabelSettings_y5360"]
 line_spacing = 7.0
-font = SubResource("SystemFont_no4k8")
+font = SubResource("SystemFont_m2x2g")
 font_size = 48
 font_color = Color(0.560784, 0.337255, 0.231373, 1)
 outline_size = 12
 outline_color = Color(0.964706, 0.901961, 0.866667, 1)
 
-[node name="Success" type="Node2D"]
+[node name="Failed" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 27023.0
@@ -50,7 +50,7 @@ visible = false
 texture_filter = 1
 position = Vector2(413, 243)
 scale = Vector2(6.1875, 6.1875)
-texture = ExtResource("2_gk3my")
+texture = ExtResource("1_agu35")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -65,7 +65,7 @@ alignment = 1
 texture_filter = 1
 custom_minimum_size = Vector2(128, 48)
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_gi54n")
+theme_override_fonts/font = SubResource("SystemFont_r2njs")
 theme_override_font_sizes/font_size = 36
 text = "Play Again"
 
@@ -76,22 +76,22 @@ layout_mode = 2
 texture_filter = 1
 custom_minimum_size = Vector2(128, 48)
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_gi54n")
+theme_override_fonts/font = SubResource("SystemFont_r2njs")
 theme_override_font_sizes/font_size = 36
 text = "Back to Menu"
 
-[node name="Success" type="Label" parent="."]
+[node name="failed" type="Label" parent="."]
 texture_filter = 1
 offset_left = -37.0
 offset_top = -33.0
 offset_right = 1182.0
 offset_bottom = 340.0
-theme_override_fonts/font = SubResource("SystemFont_52aja")
-text = "Congratulations! You Survived"
-label_settings = SubResource("LabelSettings_jwoyp")
+theme_override_fonts/font = SubResource("SystemFont_nk352")
+text = "Oh No! Give it another try:)"
+label_settings = SubResource("LabelSettings_y5360")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_q4mya")
+script = ExtResource("2_t8toh")
 
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Again" to="Success" method="_on_again_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Menu" to="Success" method="_on_menu_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Again" to="failed" method="_on_again_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Menu" to="failed" method="_on_menu_button_down"]
