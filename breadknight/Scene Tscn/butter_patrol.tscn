@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dxgvfgaywovmm" path="res://Music/pop-sound-effect-226108.mp3" id="3_axygq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qchh7"]
-size = Vector2(91.25, 87.5)
+size = Vector2(106, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oq1w"]
 size = Vector2(127, 100)
@@ -22,7 +22,7 @@ scale = Vector2(6.625, 6.625)
 texture = ExtResource("2_u5uk0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.625, -5.25)
+position = Vector2(1, -5)
 shape = SubResource("RectangleShape2D_qchh7")
 
 [node name="hit detector" type="Area2D" parent="." groups=["enemies"]]
@@ -34,9 +34,15 @@ position = Vector2(1.5, -5)
 shape = SubResource("RectangleShape2D_0oq1w")
 
 [node name="Pop" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, -4)
 stream = ExtResource("3_axygq")
-volume_db = 10.667
+volume_db = 7.333
 pitch_scale = 1.51
+area_mask = 7
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.15
 
 [connection signal="area_entered" from="hit detector" to="." method="_on_hit_detector_area_entered"]
 [connection signal="body_entered" from="hit detector" to="." method="_on_hit_detector_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

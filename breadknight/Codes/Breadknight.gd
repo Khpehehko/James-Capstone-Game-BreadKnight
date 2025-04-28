@@ -1,20 +1,18 @@
 extends CharacterBody2D
 
-const speed = 1000
+const speed = 1200
 
-#HP system WIP
-#Score system WTP
 @onready var healthbar = $hitdetector/Healthbar
 @export var health = 1
 @export var label = Label
-@export var time = Timer
+@onready var time: Timer = $Camera2D/Timer
+@onready var motivation1: Label = $Camera2D/Label3
+@onready var motivation2: Label = $Camera2D/Label4
 
 func _ready():
-	health = 16
+	health = 20
 	healthbar._init_health(health)
 	label = $Camera2D/Label
-	time = $Camera2D/Timer
-	
 	time.start()
 	
 func _update_label():
@@ -30,13 +28,13 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
-	
 	if Input.is_action_pressed("Right"):
 		$Breadknight.flip_h=true
 	if Input.is_action_pressed("Left"):
 		$Breadknight.flip_h=false
 	if health <= 0:
 		get_tree().change_scene_to_file("res://Scene Tscn/failed.tscn")
+
 
 func _set_health(value):
 	healthbar.health = health

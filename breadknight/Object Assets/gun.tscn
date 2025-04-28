@@ -17,7 +17,7 @@ scale = Vector2(0.276923, 0.276923)
 
 [node name="cooldown" type="Timer" parent="."]
 process_callback = 0
-wait_time = 0.3
+wait_time = 0.15
 autostart = true
 
 [node name="GunSFX" type="AudioStreamPlayer2D" parent="."]
