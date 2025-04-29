@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7eeapa4n1cqp"]
+[gd_scene load_steps=10 format=3 uid="uid://b7eeapa4n1cqp"]
 
 [ext_resource type="Script" path="res://Codes/Breadknight.gd" id="1_j2luj"]
 [ext_resource type="Texture2D" uid="uid://bpxodivuyvs0r" path="res://Character Assets/breadknight proto1.png" id="2_odf7a"]
 [ext_resource type="PackedScene" uid="uid://cc8u32wml2y" path="res://Object Assets/gun.tscn" id="3_yi61x"]
 [ext_resource type="PackedScene" uid="uid://ww4clcjei82w" path="res://health/healthbar.tscn" id="4_ni5ee"]
+[ext_resource type="AudioStream" uid="uid://shg3c4dbd4r7" path="res://Music/walking-sound-effect-272246.mp3" id="5_yr032"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpxey"]
 radius = 6.50467
@@ -11,7 +12,7 @@ height = 16.2991
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53oi8"]
 radius = 122.0
-height = 276.0
+height = 256.0
 
 [sub_resource type="SystemFont" id="SystemFont_4ur42"]
 subpixel_positioning = 0
@@ -58,7 +59,7 @@ offset_right = -663.0
 offset_bottom = -493.0
 
 [node name="hurtbox" type="CollisionShape2D" parent="hitdetector"]
-position = Vector2(1, 11)
+position = Vector2(-12, 5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_53oi8")
 
@@ -102,6 +103,9 @@ vertical_alignment = 1
 wait_time = 60.0
 one_shot = true
 autostart = true
+
+[node name="walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_yr032")
 
 [connection signal="timeout" from="Bulletcooldown" to="." method="_on_bulletcooldown_timeout"]
 [connection signal="area_entered" from="hitdetector" to="." method="_on_hitdetector_area_entered"]

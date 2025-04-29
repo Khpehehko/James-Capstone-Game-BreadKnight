@@ -1,13 +1,11 @@
 extends CharacterBody2D
 
-const speed = 1200
+const speed = 1150
 
 @onready var healthbar = $hitdetector/Healthbar
 @export var health = 1
 @export var label = Label
 @onready var time: Timer = $Camera2D/Timer
-@onready var motivation1: Label = $Camera2D/Label3
-@onready var motivation2: Label = $Camera2D/Label4
 
 func _ready():
 	health = 20
